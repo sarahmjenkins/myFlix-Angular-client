@@ -18,36 +18,42 @@ export class FetchApiDataService {
   // user registration
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
-    return this.http.post(apiUrl + 'register', userDetails).pipe(
-      catchError(this.handleError)
-    );
+    return this.http
+      .post(apiUrl + 'register', userDetails)
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
   // user login
   public userLogin(userDetails: any): Observable<any> {
     console.log(userDetails);
-    return this.http.post(apiUrl + 'login', userDetails).pipe(
-      catchError(this.handleError)
-    );
+    return this.http
+      .post(apiUrl + 'login', userDetails)
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
   // get all movies
   getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
-    return this.http.get(apiUrl + 'movies', {
-      headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token
-      }),
-    }).pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
+    return this.http
+      .get(apiUrl + 'movies', {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + token
+        }),
+      })
+      .pipe(
+        map(this.extractResponseData),
+        catchError(this.handleError)
+      );
   }
 
   // get one movie
   getOneMovie(Title: string): Observable<any> {
     const token = localStorage.getItem('token');
-    return this.http.get(apiUrl + `movies/${Title}`, {
+    return this.http.get('apiUrl + `movies/${Title}`', {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token
       }),
