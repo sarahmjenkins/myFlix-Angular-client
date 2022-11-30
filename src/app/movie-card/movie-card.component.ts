@@ -3,6 +3,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 
 import { DirectorComponent } from '../director/director.component';
 import { GenreComponent } from '../genre/genre.component';
+import { SynopsisComponent } from '../synopsis/synopsis.component';
 
 import { MatDialog } from '@angular/material/dialog';
 
@@ -49,6 +50,15 @@ export class MovieCardComponent implements OnInit {
       data: {
         name: name.charAt(0).toUpperCase()+name.slice(1),
         description: description,
+      }
+    })
+  }
+
+  openSynopsisDialog(name: string, description: string): void{
+    this.dialog.open(SynopsisComponent, {
+      data: {
+        movie: name,
+        description: description
       }
     })
   }
