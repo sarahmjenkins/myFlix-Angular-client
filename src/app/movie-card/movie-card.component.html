@@ -11,6 +11,7 @@
       <button
         mat-button
         color="primary"
+        (click)="openGenreDialog(movie.genre.name, movie.genre.description)"
       >
         Genre
       </button>
@@ -26,6 +27,7 @@
       <button 
         mat-button 
         color="primary"
+        
       >
         Synopsis
       </button>

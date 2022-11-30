@@ -21,11 +21,13 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { DirectorComponent } from './director/director.component';
+import { GenreComponent } from './genre/genre.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent},
   { path: 'movies', component: MovieCardComponent},
   { path: 'director', component: DirectorComponent},
+  { path: 'genre', component: GenreComponent},
   // { path: 'profile', component: ProfileComponent},
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix'},
 ];
@@ -37,7 +39,8 @@ const appRoutes: Routes = [
     LoginFormComponent,
     MovieCardComponent,
     WelcomePageComponent,
-    DirectorComponent
+    DirectorComponent,
+    GenreComponent
   ],
   imports: [
     BrowserModule,

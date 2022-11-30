@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 
 import { DirectorComponent } from '../director/director.component';
+import { GenreComponent } from '../genre/genre.component';
 
 import { MatDialog } from '@angular/material/dialog';
 
@@ -40,6 +41,15 @@ export class MovieCardComponent implements OnInit {
         birth: birth,
       }, 
       width: '500px',
+    })
+  }
+
+  openGenreDialog(name: string, description: string): void {
+    this.dialog.open(GenreComponent, {
+      data: {
+        name: name.charAt(0).toUpperCase()+name.slice(1),
+        description: description,
+      }
     })
   }
 }
