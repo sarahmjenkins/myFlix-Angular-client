@@ -173,8 +173,8 @@ export class FetchApiDataService {
     );
   }
 
-  private extractResponseData(res): any {
-    const body = res.json;
+  private extractResponseData(res: any): any {
+    const body = res;
     return body || { };
   }
 
