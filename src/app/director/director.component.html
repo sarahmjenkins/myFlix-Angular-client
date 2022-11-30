@@ -1,0 +1,18 @@
+<mat-card style="display: flex;">
+  <mat-card-header style="justify-content: center;">
+    <mat-card-title>About {{data.name}}</mat-card-title>
+    <mat-card-subtitle>Birth: {{data.birth}}</mat-card-subtitle>
+  </mat-card-header>
+  
+  <mat-card-content style="justify-content: center;">{{data.bio}}</mat-card-content>
+
+  <mat-card-actions style="justify-content: center;">
+    <button
+      mat-button
+      color="primary"
+      mat-dialog-close
+    >
+      X
+    </button>
+  </mat-card-actions>
+</mat-card>
