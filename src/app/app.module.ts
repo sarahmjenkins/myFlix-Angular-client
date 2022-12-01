@@ -24,6 +24,7 @@ import { DirectorComponent } from './director/director.component';
 import { GenreComponent } from './genre/genre.component';
 import { SynopsisComponent } from './synopsis/synopsis.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent},
@@ -31,7 +32,7 @@ const appRoutes: Routes = [
   { path: 'director', component: DirectorComponent},
   { path: 'genre', component: GenreComponent},
   { path: 'synopsis', component: SynopsisComponent},
-  // { path: 'profile', component: ProfileComponent},
+  { path: 'user', component: UserProfileComponent}, 
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix'},
 ];
 
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     DirectorComponent,
     GenreComponent,
     SynopsisComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
