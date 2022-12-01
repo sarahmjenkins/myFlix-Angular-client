@@ -30,27 +30,13 @@ export class UserProfileComponent implements OnInit {
   getUser(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.user = resp;
-      console.log(this.user);
+      // console.log(this.user);
     });
   }
 
   openEditUserDialog(): void {
    this.dialog.open(EditUserComponent)
   }
-
-  // deleteAccount(): void {
-  //   if (confirm('Are you sure you want to delete your account?')) {
-  //     this.router.navigate(['welcome']).then(() => {
-  //       this.snackBar.open('Your account has been deleted', 'OK', { duration: 2000 });
-  //       this.dialogRef.close();
-  //     });
-      
-  //   }
-  //   this.fetchApiData.deleteUser().subscribe((result) => {
-  //     console.log(result);
-  //     localStorage.clear;
-  //   })
-  // }
 
   deleteAccount(): void {
     if (confirm('Are you sure you want to delete your account?')) {
@@ -59,7 +45,7 @@ export class UserProfileComponent implements OnInit {
         this.dialogRef.close();
       });
       this.fetchApiData.deleteUser().subscribe((result) => {
-        console.log(result);
+        // console.log(result);
         localStorage.clear();
       });
     }

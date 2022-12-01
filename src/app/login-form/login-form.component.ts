@@ -25,14 +25,14 @@ export class LoginFormComponent implements OnInit {
 
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
-      console.log(result);
+      // console.log(result);
       localStorage.setItem('user', result.user.username);
       localStorage.setItem('token', result.token);
       this.dialogRef.close(); // close modal when successfully logged in
       this.snackBar.open('User login successful', 'OK',{ duration: 2000 });
       this.router.navigate(['movies']);
     }, (result) => {
-      console.log(result);
+      // console.log(result);
       this.snackBar.open('User login successful', 'OK', { duration: 2000 });
     });
   }

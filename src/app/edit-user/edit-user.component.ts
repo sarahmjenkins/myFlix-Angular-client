@@ -2,6 +2,7 @@ import { Component, OnInit, Input} from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-user',
@@ -9,25 +10,28 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./edit-user.component.scss']
 })
 export class EditUserComponent implements OnInit {
-  @Input() userData = { username: '', password: '', email: '', birthday: ''}
+  @Input() updatedUser: any = { };
   
   constructor(
     public fetchApiData: FetchApiDataService,
     public snackBar: MatSnackBar,
     public dialogRef: MatDialogRef<EditUserComponent>,
+    public router: Router
   ) { }
 
   ngOnInit(): void { }
 
   editUser(): void {
-    this.fetchApiData.editUser(this.userData).subscribe((result) => {
+    console.log(this.updatedUser);
+    this.fetchApiData.editUser(this.updatedUser).subscribe((result) => {
       console.log(result);
       this.dialogRef.close();
       this.snackBar.open('User info updated', 'OK', { duration: 2000 });
-    }, (result) => {
-      console.log(result);
-      this.snackBar.open('User info updated', 'OK', { duration: 2000 });
+      if (this.updatedUser.username || this.updatedUser.password) {
+        localStorage.clear();
+        this.router.navigate(['welcome']);
+        this.snackBar.open('Please log in with your new credentials', 'OK', { duration: 2000 });
+      };
     });
   }
-
 }
