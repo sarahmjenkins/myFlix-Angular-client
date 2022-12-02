@@ -22,12 +22,12 @@ export class EditUserComponent implements OnInit {
   ngOnInit(): void { }
 
   editUser(): void {
-    console.log(this.updatedUser);
     this.fetchApiData.editUser(this.updatedUser).subscribe((result) => {
       console.log(result);
       this.dialogRef.close();
       this.snackBar.open('User info updated', 'OK', { duration: 2000 });
-      if (this.updatedUser.username || this.updatedUser.password) {
+      localStorage.setItem('user', result.username);
+      if (result.username) {
         localStorage.clear();
         this.router.navigate(['welcome']);
         this.snackBar.open('Please log in with your new credentials', 'OK', { duration: 2000 });
