@@ -30,7 +30,7 @@ This project can run locally using Angular, Node.js, and an npm package.
   `$ npm install `
 
 4. Run locally and navigate to `http://localhost:4200`
-  `ng serve`
+  `$ ng serve`
 
 ## Project Dependencies
 
