@@ -5,7 +5,7 @@ This project uses Angular to build the client side for a movie app based on the 
 
 ## Key Features
 
-- A welcome view allowing users to registr or log in
+- A welcome view allowing users to register or log in
 - A view of all movies once a user is logged in
 - Buttons on each movie card allowing users to
   - View a movie synopsis
@@ -34,7 +34,6 @@ This profile can run locally using Angular, Node.js, and an npm package.
 
 ## Project Dependencies
 
-"dependencies": {
   "@angular/animations": "^15.0.0",
   "@angular/cdk": "^15.0.0",
   "@angular/common": "^15.0.0",
@@ -48,8 +47,9 @@ This profile can run locally using Angular, Node.js, and an npm package.
   "rxjs": "~7.5.0",
   "tslib": "^2.3.0",
   "zone.js": "~0.12.0"
-},
-"devDependencies": {
+
+## Developer Dependencies
+
   "@angular-devkit/build-angular": "^15.0.1",
   "@angular/cli": "~15.0.1",
   "@angular/compiler-cli": "^15.0.0",
@@ -63,7 +63,6 @@ This profile can run locally using Angular, Node.js, and an npm package.
   "karma-jasmine-html-reporter": "~2.0.0",
   "typedoc": "^0.23.23",
   "typescript": "~4.8.2"
-}
 
 ## Deployed Site
 
