@@ -1,5 +1,15 @@
-<mat-card style="display: flex;">
-  <mat-card-header style="justify-content: center;">
+<mat-card>
+  <mat-card-actions class="close">
+    <button 
+      mat-button 
+      color="primary" 
+      mat-dialog-close
+    >
+      X
+    </button>
+  </mat-card-actions>
+  
+  <mat-card-header>
     <mat-card-title>Profile Info</mat-card-title>
   </mat-card-header>
 
@@ -9,7 +19,7 @@
     Birthday: {{user.birthday}}<br>
   </mat-card-content> 
 
-  <mat-card-actions style="justify-content: center;">
+  <mat-card-actions>
     <button 
       mat-button 
       color="primary" 
@@ -26,12 +36,5 @@
         Delete Account
       </button>
 
-    <button 
-      mat-button 
-      color="primary" 
-      mat-dialog-close
-    >
-      X
-    </button>
   </mat-card-actions>
 </mat-card>

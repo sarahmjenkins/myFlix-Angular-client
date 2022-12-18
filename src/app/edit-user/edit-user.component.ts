@@ -21,6 +21,11 @@ export class EditUserComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  /**
+   * Edit user data
+   * @function editUser
+   * @returns status message
+   */
   editUser(): void {
     this.fetchApiData.editUser(this.updatedUser).subscribe((result) => {
       console.log(result);

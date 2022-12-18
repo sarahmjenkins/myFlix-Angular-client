@@ -17,10 +17,19 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void{ }
 
+  /**
+   * Opens user profile info
+   * @function openUserProfileDialog
+   * @returns user object
+  */
   openUserProfileDialog(): void {
     this.dialog.open(UserProfileComponent);
   }
 
+  /**
+   * Logs user out and clears local storage
+   * @function logOut
+  */
   logOut(): void {
     this.router.navigate(['welcome']);
     localStorage.clear()

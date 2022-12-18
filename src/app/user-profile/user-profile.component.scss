@@ -1,0 +1,17 @@
+mat-card {
+  display: flex;
+  justify-content: column;
+}
+
+mat-card-header {
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+mat-card-content {
+  justify-content: space-between;
+}
+
+mat-card-actions {
+  flex-direction: column;
+}

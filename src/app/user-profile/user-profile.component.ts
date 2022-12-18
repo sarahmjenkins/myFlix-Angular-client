@@ -27,6 +27,11 @@ export class UserProfileComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * Get user info
+   * @function getUser
+   * @returns user object
+  */
   getUser(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.user = resp;
@@ -34,10 +39,20 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Open edit user dialog
+   * @function openEditUserDialog
+   * @returns editUser component
+  */
   openEditUserDialog(): void {
    this.dialog.open(EditUserComponent)
   }
 
+  /**
+   * Delete user's account
+   * @function deleteAccount
+   * @returns status message
+  */
   deleteAccount(): void {
     if (confirm('Are you sure you want to delete your account?')) {
       this.router.navigate(['welcome']).then(() => {
