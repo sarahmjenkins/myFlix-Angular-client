@@ -16,7 +16,7 @@ This project uses Angular to build the client side for a movie app based on the 
 
 ## Required Tools
 
-This profile can run locally using Angular, Node.js, and an npm package.
+This project can run locally using Angular, Node.js, and an npm package.
 
 ## Running the Project
 
